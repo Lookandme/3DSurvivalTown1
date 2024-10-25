@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Look")]
 
-    public Transform CameraContainer;
+    public Transform cameraContainer;
     public float minLook;
     public float maxLook;
     private float camRot;
@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 mosDelta;
 
-    private bool canLook = true;
 
     private Rigidbody rb;
     private void Awake()
@@ -38,6 +37,10 @@ public class PlayerController : MonoBehaviour
     {
         Move();
     }
+    private void LateUpdate()
+    {
+        CameraLook();
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -47,11 +50,55 @@ public class PlayerController : MonoBehaviour
         }
         else { currentMoveMent = Vector2.zero; }
     }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && IsGrounded())
+        {
+            rb.AddForce(Vector2.up * jumpPower,ForceMode.Impulse );
+        }
+    }
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        mosDelta = context.ReadValue<Vector2>();
+    }
+
+
     private void Move()
     {
         Vector3 dir = transform.forward * currentMoveMent.y + transform.right * currentMoveMent.x;
         dir *= moveSpeed;
         dir.y = rb.velocity.y;
         rb.velocity = dir;
+    }
+
+    void CameraLook()
+    {
+        camRot += mosDelta.y * lookSensitivity;
+        camRot = Mathf.Clamp(camRot, minLook, maxLook);
+        cameraContainer.localEulerAngles = new Vector3(-camRot, 0, 0);
+
+        transform.eulerAngles += new Vector3(0, mosDelta.x * lookSensitivity, 0);
+    }
+
+
+    bool IsGrounded()
+    {
+        Ray[] rays = new Ray[4]
+        {
+            new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.right * 0.2f) +(transform.up * 0.01f), Vector3.down)
+        };
+
+        for (int i = 0; i < rays.Length; i++)
+        {
+            if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
