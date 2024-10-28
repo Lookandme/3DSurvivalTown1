@@ -299,6 +299,7 @@ MonoBehaviour:
   minLook: -85
   maxLook: 85
   lookSensitivity: 0.1
+  staminaUi: {fileID: 7034589922030391983}
 --- !u!114 &645992644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,6 +1178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4482874361698064366}
+  - component: {fileID: 4482874361698064367}
   m_Layer: 5
   m_Name: HealthUi
   m_TagString: Untagged
@@ -1255,15 +1257,15 @@ RectTransform:
   m_GameObject: {fileID: 8404156213827945082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4482874361698064366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -203, y: 5}
-  m_SizeDelta: {x: 340, y: 80}
+  m_AnchoredPosition: {x: -202, y: 3}
+  m_SizeDelta: {x: 380, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916885090421042264
 MonoBehaviour:
@@ -1505,6 +1507,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4482874361698064367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803731326446398097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cc40634fe4b3049af4b584652bb1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 3547724807112825532}
 --- !u!1 &4878248412592843545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,7 +1563,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7034589922030391982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1686,6 +1701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4918073149692244550}
+  - component: {fileID: 7034589922030391983}
   m_Layer: 5
   m_Name: StaminaUi
   m_TagString: Untagged
@@ -1693,6 +1709,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7034589922030391983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034589922030391982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03de83856d0907f46865945bce9c7cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 7108421801143662221}
 --- !u!114 &7108421801143662221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,15 +1761,15 @@ RectTransform:
   m_GameObject: {fileID: 7775187989097819773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4918073149692244550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -203, y: 5}
-  m_SizeDelta: {x: 340, y: 80}
+  m_AnchoredPosition: {x: -202, y: 3}
+  m_SizeDelta: {x: 380, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7251802996442907986
 MonoBehaviour:
