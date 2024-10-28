@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
 
     private Rigidbody rb;
+    public StaminaUi staminaUi;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,6 +33,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;  // ¸¶¿ì½º Ä¿¼­ ¼û±è
+    }
+    private void Update()
+    {
+        
     }
     private void FixedUpdate()
     {
@@ -55,6 +60,10 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
             rb.AddForce(Vector2.up * jumpPower,ForceMode.Impulse );
+
+            staminaUi.SetDecreaseStamina();
+
+
         }
     }
     public void OnLook(InputAction.CallbackContext context)
