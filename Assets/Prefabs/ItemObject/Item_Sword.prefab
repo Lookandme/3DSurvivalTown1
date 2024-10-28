@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5327538967123719807}
   - component: {fileID: 7714129196094622157}
   - component: {fileID: 4948386877104972609}
+  - component: {fileID: 8153874920152779689}
   m_Layer: 0
   m_Name: Item_Sword
   m_TagString: Untagged
@@ -165,3 +166,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8153874920152779689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073370847849241135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5eff76610b4e2e44af0afc18bf74cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 16efebc7477de3b4c8f4dc4a0db4adc1, type: 2}
