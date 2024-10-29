@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     public StaminaUi staminaUi;
+    public HealthUi healthUi;
+    public Water water;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpPower,ForceMode.Impulse );
 
-            staminaUi.SetDecreaseStamina();
+            staminaUi.SetDecreaseStamina(10f);
 
 
         }
@@ -109,5 +111,14 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+    public void InWater()
+    {
+        
+        while (water.inWater == true)
+        {
+            healthUi.SetDecreaseHealth(0.1f);
+            Debug.Log("b");
+        }
     }
 }
