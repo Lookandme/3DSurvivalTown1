@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpCube : MonoBehaviour
+public class JumpPad : MonoBehaviour
 {
     public float jumpForce = 100f;
 
