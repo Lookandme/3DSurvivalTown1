@@ -25,35 +25,37 @@ public class PlayerCondition : MonoBehaviour
         _image.fillAmount = currentValue / maxValue;
     }
 
-    public virtual void PassiveRecovery()
-    {
-        if (currentValue == maxValue) return;
-        if (currentValue < maxValue)
-        {
-            currentValue += 0.01f;
-        }
-        UpdateUi();
-    }
+    
 
     protected virtual void AddAmount(float amount)
     {
-        currentValue += amount;
 
-        if (currentValue < maxValue)
+       
+        if (currentValue > maxValue)
         {
             currentValue = maxValue;
         }
+        else
+        {
+            currentValue += amount;
+        }
         UpdateUi();
+
     }
     protected virtual void DecreaseAmount(float amount)
     {
-        currentValue -= amount;
-        
+       
+
         if (currentValue < minValue)
         {
             currentValue = minValue;
         }
+        else
+        {
+            currentValue -= amount;
+        }
         UpdateUi();
+
     }
 
     

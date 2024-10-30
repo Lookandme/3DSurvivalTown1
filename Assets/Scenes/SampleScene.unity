@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 68811715}
   - component: {fileID: 68811714}
   - component: {fileID: 68811713}
+  - component: {fileID: 68811718}
   m_Layer: 0
   m_Name: JumpPad
   m_TagString: Untagged
@@ -256,6 +257,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &68811718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68811712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0e056caa592da46b6722caec7edc2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 200
 --- !u!4 &142194828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8407946972163067645, guid: 92101ed146e7f434cb43a3680c518e75, type: 3}

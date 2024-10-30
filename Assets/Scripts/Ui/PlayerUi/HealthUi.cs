@@ -15,11 +15,10 @@ public class HealthUi : PlayerCondition
     }
     private void Update()
     {
-        PassiveRecovery();
+        AddAmount(0.01f);
     }
 
-    public override void PassiveRecovery() => base.PassiveRecovery();
-
+   
     protected override void AddAmount(float amount) => base.AddAmount(amount);
 
     protected override void DecreaseAmount(float amount)
@@ -35,7 +34,7 @@ public class HealthUi : PlayerCondition
         {
             TakeDamage.SetActive(true);
             yield return new WaitForSeconds(1f); // 활성화 시간
-            TakeDamage.SetActive(false);                                 // 체력이 감소하는 코드 구현 /수정 필요 , 화면 깜빡이는 코드 구현 / 수정필요 
+            TakeDamage.SetActive(false);                                 // /수정 필요 , 화면 깜빡이는 코드 구현 / 수정필요 
             yield return new WaitForSeconds(1f); // 비활성화 시간
         }
         TakeDamage.SetActive(false);

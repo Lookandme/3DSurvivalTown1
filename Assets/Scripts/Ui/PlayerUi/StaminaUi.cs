@@ -6,12 +6,12 @@ public class StaminaUi : PlayerCondition
     }
     private void Update()
     {
-        PassiveRecovery();
+        AddAmount(0.01f);
     }
 
 
 
-    public override void PassiveRecovery() => base.PassiveRecovery();
+    
     protected override void AddAmount(float amount) => base.AddAmount(amount);
     protected override void DecreaseAmount(float amount) => base.DecreaseAmount(amount);
 
