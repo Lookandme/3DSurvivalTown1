@@ -21,11 +21,11 @@ public class Water : MonoBehaviour
             timer += Time.deltaTime;
             if (timer > underWater)
             {
-                
+
                 // 데미지가 들어오는 코드 자리
-                
+
                 healthUi.SetDecreaseHealth(0.01f);
-                healthUi.TakeDamageUi();
+                //healthUi.TakeDamageUi();
             }
                 
         }
